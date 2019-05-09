@@ -22,8 +22,8 @@ class SlotMachine extends React.Component {
         let slots = this.props.slots;
         const items = Array.from({length: slots}, () => populateSlot(slots));
 
-        const itemsAreEqual = items[0].props.children === items[1].props.children &&
-            items[1].props.children === items[2].props.children;
+        const itemsAreEqual = (items[0].props.children === items[1].props.children) &&
+            (items[1].props.children === items[2].props.children);
         const msg = itemsAreEqual ? 'You win!' : 'You loose!';
 
         return (

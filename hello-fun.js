@@ -1,9 +1,5 @@
 function HelloFun() {
-    return (
-        <div>
-            <h1>Hello from function!</h1>
-        </div>
-    );
+    return React.createElement("div", null, React.createElement("h1", null, "Hello from function!"));
 }
 
-ReactDOM.render(<HelloFun />, document.getElementById('root-fun'));
+ReactDOM.render(<HelloFun/>, document.getElementById('root-fun'));

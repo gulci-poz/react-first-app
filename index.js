@@ -19,8 +19,8 @@ class Hello extends React.Component {
                 {num === 7 ? <p>You've won!</p> : <p>You've lost!</p>}
                 {num === 7 && <p>You've won!</p>}
                 {msg}
-                <Goodbye/>
-                <Goodbye/>
+                <Goodbye to="Ringo" from="Paul" data={[1, 2, 3, 4, 5]}/>
+                <Goodbye to="Axl" from="Slash" data={[6, 7, 8, 9, 10]}/>
             </div>
         )
     };

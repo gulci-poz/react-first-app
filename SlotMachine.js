@@ -3,30 +3,27 @@ function genNum(slots) {
 }
 
 function getEmoji(slot) {
-    let emoji;
-
     switch (slot) {
         case 1:
-            emoji = <span>&#x2764;</span>;
-            break;
+            return <span>&#x2764;</span>;
         case 2:
-            emoji = <span>&#x1f4a3;</span>;
-            break;
+            return <span>&#x1f4a3;</span>;
         case 3:
-            emoji = <span>&#x1f435;</span>;
-            break;
+            return <span>&#x1f435;</span>;
     }
+}
 
-    return emoji;
+function populateSlot(slots) {
+    return getEmoji(genNum(slots));
 }
 
 class SlotMachine extends React.Component {
     render() {
         let slots = this.props.slots;
-        const itemsNum = Array.from({length: slots}, () => genNum(slots));
-        const items = Array.from(itemsNum, (e) => getEmoji(e));
+        const items = Array.from({length: slots}, () => populateSlot(slots));
 
-        const itemsAreEqual = itemsNum[0] === itemsNum[1] && itemsNum[1] === itemsNum[2];
+        const itemsAreEqual = items[0].props.children === items[1].props.children &&
+            items[1].props.children === items[2].props.children;
         const msg = itemsAreEqual ? 'You win!' : 'You loose!';
 
         return (

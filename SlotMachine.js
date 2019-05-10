@@ -10,6 +10,7 @@ function getEmoji(slot) {
             return <span>&#x1f4a3;</span>;
         case 3:
             return <span>&#x1f435;</span>;
+        // todo more items possible, +default or min/max num of slots
     }
 }
 
@@ -22,10 +23,12 @@ class SlotMachine extends React.Component {
         let slots = this.props.slots;
         const items = Array.from({length: slots}, () => populateSlot(slots));
 
+        // todo more items possible
         const itemsAreEqual = (items[0].props.children === items[1].props.children) &&
             (items[1].props.children === items[2].props.children);
         const msg = itemsAreEqual ? 'You win!' : 'You loose!';
 
+        // todo more items possible
         return (
             <div>
                 {items[0]} {items[1]} {items[2]}

@@ -21,7 +21,9 @@ class Hello extends React.Component {
                 {msg}
                 <Goodbye to="Ringo" from="Paul" data={[1, 2, 3, 4, 5]}/>
                 <Goodbye to="Axl" from="Slash" data={[6, 7, 8, 9, 10]}/>
+                <Goodbye/>
                 <SlotMachine slots={3}/>
+                <Friend name="Axl" hobbies={['guitar', 'drums', 'piano']}/>
             </div>
         )
     };

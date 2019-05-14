@@ -30,9 +30,10 @@ class SlotMachine extends React.Component {
 
         // todo more items possible
         return (
-            <div>
+            <div className="Machine">
                 {items[0]} {items[1]} {items[2]}
-                <p>{msg}</p>
+                <p className={itemsAreEqual ? 'winner' : 'loser'}
+                   style={{fontSize: '30px', backgroundColor: 'yellow'}}>{msg}</p>
             </div>
         );
     };
